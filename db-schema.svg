@@ -1,0 +1,175 @@
+<svg viewBox="0 0 1100 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#080d1a"/>
+      <stop offset="100%" style="stop-color:#0a1020"/>
+    </linearGradient>
+    <linearGradient id="tableHeader" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0f3460"/>
+      <stop offset="100%" style="stop-color:#164280"/>
+    </linearGradient>
+    <linearGradient id="tableHeaderPurp" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2d1b69"/>
+      <stop offset="100%" style="stop-color:#3d2899"/>
+    </linearGradient>
+    <linearGradient id="tableHeaderGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#065f46"/>
+      <stop offset="100%" style="stop-color:#047857"/>
+    </linearGradient>
+    <marker id="fkArrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#4a5568"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="500" fill="url(#dbBg)"/>
+
+  <!-- Title -->
+  <text x="550" y="32" font-family="Georgia, serif" font-size="16" fill="#00d4ff" text-anchor="middle" letter-spacing="3">DATABASE SCHEMA — PostgreSQL 16 + pgvector</text>
+  <text x="550" y="50" font-family="monospace" font-size="11" fill="#4a5568" text-anchor="middle">14 tables · 12 ENUMs · ivfflat index on 1536-dim skill embeddings</text>
+
+  <!-- USERS table -->
+  <rect x="30" y="70" width="170" height="165" rx="8" fill="#0a1525" stroke="#00d4ff" stroke-width="1.5" stroke-opacity="0.7"/>
+  <rect x="30" y="70" width="170" height="28" rx="8" fill="url(#tableHeader)"/>
+  <rect x="30" y="90" width="170" height="8" fill="url(#tableHeader)"/>
+  <text x="115" y="89" font-family="monospace" font-size="12" fill="#38bdf8" text-anchor="middle" font-weight="700">users</text>
+  <text x="40" y="115" font-family="monospace" font-size="9" fill="#7dd3fc">🔑 id UUID PK</text>
+  <text x="40" y="131" font-family="monospace" font-size="9" fill="#4a90d9">   email VARCHAR UNIQUE</text>
+  <text x="40" y="147" font-family="monospace" font-size="9" fill="#4a90d9">   password_hash TEXT</text>
+  <text x="40" y="163" font-family="monospace" font-size="9" fill="#4a90d9">   role ENUM</text>
+  <text x="40" y="179" font-family="monospace" font-size="9" fill="#4a90d9">   company_id UUID FK</text>
+  <text x="40" y="195" font-family="monospace" font-size="9" fill="#4a90d9">   manager_id UUID FK</text>
+  <text x="40" y="211" font-family="monospace" font-size="9" fill="#4a90d9">   created_at TIMESTAMPTZ</text>
+  <text x="40" y="227" font-family="monospace" font-size="9" fill="#4a90d9">   refresh_token TEXT</text>
+
+  <!-- COMPANIES table -->
+  <rect x="30" y="255" width="170" height="115" rx="8" fill="#0a1525" stroke="#00d4ff" stroke-width="1.5" stroke-opacity="0.5"/>
+  <rect x="30" y="255" width="170" height="28" rx="8" fill="url(#tableHeader)"/>
+  <rect x="30" y="275" width="170" height="8" fill="url(#tableHeader)"/>
+  <text x="115" y="273" font-family="monospace" font-size="12" fill="#38bdf8" text-anchor="middle" font-weight="700">companies</text>
+  <text x="40" y="299" font-family="monospace" font-size="9" fill="#7dd3fc">🔑 id UUID PK</text>
+  <text x="40" y="315" font-family="monospace" font-size="9" fill="#4a90d9">   name VARCHAR</text>
+  <text x="40" y="331" font-family="monospace" font-size="9" fill="#4a90d9">   domain VARCHAR UNIQUE</text>
+  <text x="40" y="347" font-family="monospace" font-size="9" fill="#4a90d9">   created_at TIMESTAMPTZ</text>
+
+  <!-- PROFILES table -->
+  <rect x="225" y="70" width="175" height="185" rx="8" fill="#0a1525" stroke="#7b2fff" stroke-width="1.5" stroke-opacity="0.7"/>
+  <rect x="225" y="70" width="175" height="28" rx="8" fill="url(#tableHeaderPurp)"/>
+  <rect x="225" y="90" width="175" height="8" fill="url(#tableHeaderPurp)"/>
+  <text x="312" y="89" font-family="monospace" font-size="12" fill="#c4b5fd" text-anchor="middle" font-weight="700">employee_profiles</text>
+  <text x="235" y="115" font-family="monospace" font-size="9" fill="#c4b5fd">🔑 id UUID PK</text>
+  <text x="235" y="131" font-family="monospace" font-size="9" fill="#9061f9">   user_id UUID FK</text>
+  <text x="235" y="147" font-family="monospace" font-size="9" fill="#9061f9">   bio TEXT</text>
+  <text x="235" y="163" font-family="monospace" font-size="9" fill="#9061f9">   years_experience INT</text>
+  <text x="235" y="179" font-family="monospace" font-size="9" fill="#9061f9">   current_role VARCHAR</text>
+  <text x="235" y="195" font-family="monospace" font-size="9" fill="#9061f9">   aspiration_role VARCHAR</text>
+  <text x="235" y="211" font-family="monospace" font-size="9" fill="#9061f9">   aspiration_timeline ENUM</text>
+  <text x="235" y="227" font-family="monospace" font-size="9" fill="#9061f9">   privacy_level ENUM</text>
+  <text x="235" y="243" font-family="monospace" font-size="9" fill="#9061f9">   mobility_status ENUM</text>
+
+  <!-- SKILLS table -->
+  <rect x="225" y="275" width="175" height="145" rx="8" fill="#0a1525" stroke="#7b2fff" stroke-width="1.5" stroke-opacity="0.5"/>
+  <rect x="225" y="275" width="175" height="28" rx="8" fill="url(#tableHeaderPurp)"/>
+  <rect x="225" y="295" width="175" height="8" fill="url(#tableHeaderPurp)"/>
+  <text x="312" y="293" font-family="monospace" font-size="12" fill="#c4b5fd" text-anchor="middle" font-weight="700">skills</text>
+  <text x="235" y="317" font-family="monospace" font-size="9" fill="#c4b5fd">🔑 id UUID PK</text>
+  <text x="235" y="333" font-family="monospace" font-size="9" fill="#9061f9">   name VARCHAR UNIQUE</text>
+  <text x="235" y="349" font-family="monospace" font-size="9" fill="#9061f9">   category ENUM</text>
+  <text x="235" y="365" font-family="monospace" font-size="9" fill="#9061f9">   embedding vector(1536)</text>
+  <text x="235" y="381" font-family="monospace" font-size="9" fill="#9061f9">   -- ivfflat INDEX</text>
+  <text x="235" y="397" font-family="monospace" font-size="9" fill="#9061f9">   -- cosine_ops</text>
+
+  <!-- EMPLOYEE_SKILLS table -->
+  <rect x="430" y="70" width="195" height="165" rx="8" fill="#0a1525" stroke="#00d4ff" stroke-width="1.5" stroke-opacity="0.7"/>
+  <rect x="430" y="70" width="195" height="28" rx="8" fill="url(#tableHeader)"/>
+  <rect x="430" y="90" width="195" height="8" fill="url(#tableHeader)"/>
+  <text x="527" y="89" font-family="monospace" font-size="12" fill="#38bdf8" text-anchor="middle" font-weight="700">employee_skills</text>
+  <text x="440" y="115" font-family="monospace" font-size="9" fill="#7dd3fc">🔑 id UUID PK</text>
+  <text x="440" y="131" font-family="monospace" font-size="9" fill="#4a90d9">   profile_id UUID FK</text>
+  <text x="440" y="147" font-family="monospace" font-size="9" fill="#4a90d9">   skill_id UUID FK</text>
+  <text x="440" y="163" font-family="monospace" font-size="9" fill="#4a90d9">   proficiency_level ENUM</text>
+  <text x="440" y="179" font-family="monospace" font-size="9" fill="#4a90d9">   years_used NUMERIC</text>
+  <text x="440" y="195" font-family="monospace" font-size="9" fill="#4a90d9">   is_validated BOOLEAN</text>
+  <text x="440" y="211" font-family="monospace" font-size="9" fill="#4a90d9">   validated_by UUID FK</text>
+  <text x="440" y="227" font-family="monospace" font-size="9" fill="#4a90d9">   validation_date DATE</text>
+
+  <!-- JOB_POSTINGS table -->
+  <rect x="430" y="255" width="195" height="165" rx="8" fill="#0a1525" stroke="#22c55e" stroke-width="1.5" stroke-opacity="0.7"/>
+  <rect x="430" y="255" width="195" height="28" rx="8" fill="url(#tableHeaderGreen)"/>
+  <rect x="430" y="275" width="195" height="8" fill="url(#tableHeaderGreen)"/>
+  <text x="527" y="273" font-family="monospace" font-size="12" fill="#4ade80" text-anchor="middle" font-weight="700">job_postings</text>
+  <text x="440" y="297" font-family="monospace" font-size="9" fill="#4ade80">🔑 id UUID PK</text>
+  <text x="440" y="313" font-family="monospace" font-size="9" fill="#86efac">   title VARCHAR</text>
+  <text x="440" y="329" font-family="monospace" font-size="9" fill="#86efac">   department VARCHAR</text>
+  <text x="440" y="345" font-family="monospace" font-size="9" fill="#86efac">   company_id UUID FK</text>
+  <text x="440" y="361" font-family="monospace" font-size="9" fill="#86efac">   posted_by UUID FK</text>
+  <text x="440" y="377" font-family="monospace" font-size="9" fill="#86efac">   status ENUM</text>
+  <text x="440" y="393" font-family="monospace" font-size="9" fill="#86efac">   description TEXT</text>
+  <text x="440" y="409" font-family="monospace" font-size="9" fill="#86efac">   location_type ENUM</text>
+
+  <!-- APPLICATIONS table -->
+  <rect x="650" y="70" width="190" height="145" rx="8" fill="#0a1525" stroke="#22c55e" stroke-width="1.5" stroke-opacity="0.5"/>
+  <rect x="650" y="70" width="190" height="28" rx="8" fill="url(#tableHeaderGreen)"/>
+  <rect x="650" y="90" width="190" height="8" fill="url(#tableHeaderGreen)"/>
+  <text x="745" y="89" font-family="monospace" font-size="12" fill="#4ade80" text-anchor="middle" font-weight="700">applications</text>
+  <text x="660" y="115" font-family="monospace" font-size="9" fill="#4ade80">🔑 id UUID PK</text>
+  <text x="660" y="131" font-family="monospace" font-size="9" fill="#86efac">   posting_id UUID FK</text>
+  <text x="660" y="147" font-family="monospace" font-size="9" fill="#86efac">   applicant_id UUID FK</text>
+  <text x="660" y="163" font-family="monospace" font-size="9" fill="#86efac">   stage ENUM</text>
+  <text x="660" y="179" font-family="monospace" font-size="9" fill="#86efac">   cover_note TEXT</text>
+  <text x="660" y="195" font-family="monospace" font-size="9" fill="#86efac">   applied_at TIMESTAMPTZ</text>
+
+  <!-- NOTIFICATIONS table -->
+  <rect x="650" y="235" width="190" height="145" rx="8" fill="#0a1525" stroke="#f59e0b" stroke-width="1.5" stroke-opacity="0.6"/>
+  <rect x="650" y="235" width="190" height="28" rx="8" fill="#1a1000"/>
+  <rect x="650" y="255" width="190" height="8" fill="#1a1000"/>
+  <text x="745" y="253" font-family="monospace" font-size="12" fill="#fbbf24" text-anchor="middle" font-weight="700">notifications</text>
+  <text x="660" y="277" font-family="monospace" font-size="9" fill="#fbbf24">🔑 id UUID PK</text>
+  <text x="660" y="293" font-family="monospace" font-size="9" fill="#fde68a">   user_id UUID FK</text>
+  <text x="660" y="309" font-family="monospace" font-size="9" fill="#fde68a">   type ENUM</text>
+  <text x="660" y="325" font-family="monospace" font-size="9" fill="#fde68a">   payload JSONB</text>
+  <text x="660" y="341" font-family="monospace" font-size="9" fill="#fde68a">   is_read BOOLEAN</text>
+  <text x="660" y="357" font-family="monospace" font-size="9" fill="#fde68a">   created_at TIMESTAMPTZ</text>
+
+  <!-- More tables - condensed -->
+  <rect x="860" y="70" width="210" height="95" rx="8" fill="#0a1525" stroke="#a78bfa" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="965" y="93" font-family="monospace" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="700">job_required_skills</text>
+  <text x="875" y="112" font-family="monospace" font-size="9" fill="#9061f9">🔑 id · posting_id FK · skill_id FK</text>
+  <text x="875" y="128" font-family="monospace" font-size="9" fill="#9061f9">   importance ENUM · required BOOL</text>
+  <text x="875" y="144" font-family="monospace" font-size="9" fill="#9061f9">   min_proficiency ENUM</text>
+
+  <rect x="860" y="180" width="210" height="80" rx="8" fill="#0a1525" stroke="#a78bfa" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="965" y="201" font-family="monospace" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="700">interests</text>
+  <text x="875" y="220" font-family="monospace" font-size="9" fill="#9061f9">🔑 id · posting_id FK · user_id FK</text>
+  <text x="875" y="236" font-family="monospace" font-size="9" fill="#9061f9">   expressed_at TIMESTAMPTZ</text>
+  <text x="875" y="252" font-family="monospace" font-size="9" fill="#9061f9">   UNIQUE(posting_id, user_id)</text>
+
+  <rect x="860" y="275" width="210" height="80" rx="8" fill="#0a1525" stroke="#22c55e" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="965" y="296" font-family="monospace" font-size="11" fill="#4ade80" text-anchor="middle" font-weight="700">digest_logs</text>
+  <text x="875" y="315" font-family="monospace" font-size="9" fill="#86efac">🔑 id · user_id FK</text>
+  <text x="875" y="331" font-family="monospace" font-size="9" fill="#86efac">   sent_at · job_count INT</text>
+  <text x="875" y="347" font-family="monospace" font-size="9" fill="#86efac">   blurb TEXT (Claude-generated)</text>
+
+  <rect x="860" y="370" width="210" height="95" rx="8" fill="#0a1525" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="965" y="391" font-family="monospace" font-size="11" fill="#fbbf24" text-anchor="middle" font-weight="700">career_milestones</text>
+  <text x="875" y="410" font-family="monospace" font-size="9" fill="#fde68a">🔑 id · user_id FK</text>
+  <text x="875" y="426" font-family="monospace" font-size="9" fill="#fde68a">   horizon ENUM (1yr/2yr/3yr)</text>
+  <text x="875" y="442" font-family="monospace" font-size="9" fill="#fde68a">   target_role · skills_needed</text>
+  <text x="875" y="458" font-family="monospace" font-size="9" fill="#fde68a">   claude_analysis JSONB</text>
+
+  <!-- FK relationship lines -->
+  <line x1="200" y1="155" x2="225" y2="155" stroke="#4a5568" stroke-width="1" stroke-dasharray="4,2" marker-end="url(#fkArrow)" opacity="0.5"/>
+  <line x1="400" y1="140" x2="430" y2="140" stroke="#4a5568" stroke-width="1" stroke-dasharray="4,2" marker-end="url(#fkArrow)" opacity="0.5"/>
+  <line x1="625" y1="145" x2="650" y2="145" stroke="#4a5568" stroke-width="1" stroke-dasharray="4,2" marker-end="url(#fkArrow)" opacity="0.5"/>
+  <line x1="625" y1="330" x2="650" y2="310" stroke="#4a5568" stroke-width="1" stroke-dasharray="4,2" marker-end="url(#fkArrow)" opacity="0.5"/>
+
+  <!-- Legend -->
+  <rect x="30" y="455" width="420" height="30" rx="6" fill="#0a1525" stroke="#1e293b" stroke-width="1"/>
+  <rect x="42" y="463" width="12" height="12" rx="2" fill="#00d4ff" opacity="0.4"/>
+  <text x="60" y="473" font-family="monospace" font-size="9" fill="#4a90d9">Core tables</text>
+  <rect x="130" y="463" width="12" height="12" rx="2" fill="#7b2fff" opacity="0.4"/>
+  <text x="148" y="473" font-family="monospace" font-size="9" fill="#9061f9">Profile/Skills</text>
+  <rect x="235" y="463" width="12" height="12" rx="2" fill="#22c55e" opacity="0.4"/>
+  <text x="253" y="473" font-family="monospace" font-size="9" fill="#4ade80">Jobs/Applications</text>
+  <rect x="360" y="463" width="12" height="12" rx="2" fill="#f59e0b" opacity="0.4"/>
+  <text x="378" y="473" font-family="monospace" font-size="9" fill="#fbbf24">Events/Digests</text>
+</svg>

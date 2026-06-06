@@ -1,0 +1,105 @@
+<svg viewBox="0 0 1000 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="techBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#08091a"/>
+      <stop offset="100%" style="stop-color:#0d1020"/>
+    </linearGradient>
+    <filter id="techGlow">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="220" fill="url(#techBg)"/>
+  <text x="500" y="30" font-family="Georgia, serif" font-size="14" fill="#00d4ff" text-anchor="middle" letter-spacing="4">TECHNOLOGY STACK</text>
+  <line x1="80" y1="38" x2="920" y2="38" stroke="#00d4ff" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Card 1: Frontend -->
+  <rect x="30" y="50" width="185" height="145" rx="12" fill="#0a1525" stroke="#00d4ff" stroke-width="1.5" stroke-opacity="0.6"/>
+  <text x="122" y="76" font-family="monospace" font-size="10" fill="#00d4ff" text-anchor="middle" letter-spacing="2">FRONTEND</text>
+  <line x1="45" y1="83" x2="200" y2="83" stroke="#00d4ff" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="52" cy="100" r="3" fill="#00d4ff" opacity="0.7"/>
+  <text x="62" y="104" font-family="monospace" font-size="11" fill="#7dd3fc">React 18 + Vite</text>
+  <circle cx="52" cy="118" r="3" fill="#00d4ff" opacity="0.7"/>
+  <text x="62" y="122" font-family="monospace" font-size="11" fill="#7dd3fc">TypeScript strict</text>
+  <circle cx="52" cy="136" r="3" fill="#00d4ff" opacity="0.7"/>
+  <text x="62" y="140" font-family="monospace" font-size="11" fill="#7dd3fc">Tailwind CSS</text>
+  <circle cx="52" cy="154" r="3" fill="#00d4ff" opacity="0.7"/>
+  <text x="62" y="158" font-family="monospace" font-size="11" fill="#7dd3fc">D3.js solar system</text>
+  <circle cx="52" cy="172" r="3" fill="#00d4ff" opacity="0.7"/>
+  <text x="62" y="176" font-family="monospace" font-size="11" fill="#7dd3fc">Recharts dashboards</text>
+
+  <!-- Card 2: Backend -->
+  <rect x="230" y="50" width="185" height="145" rx="12" fill="#100828" stroke="#7b2fff" stroke-width="1.5" stroke-opacity="0.6"/>
+  <text x="322" y="76" font-family="monospace" font-size="10" fill="#a78bfa" text-anchor="middle" letter-spacing="2">BACKEND</text>
+  <line x1="245" y1="83" x2="400" y2="83" stroke="#7b2fff" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="252" cy="100" r="3" fill="#a78bfa" opacity="0.7"/>
+  <text x="262" y="104" font-family="monospace" font-size="11" fill="#c4b5fd">Express + TypeScript</text>
+  <circle cx="252" cy="118" r="3" fill="#a78bfa" opacity="0.7"/>
+  <text x="262" y="122" font-family="monospace" font-size="11" fill="#c4b5fd">Socket.io realtime</text>
+  <circle cx="252" cy="136" r="3" fill="#a78bfa" opacity="0.7"/>
+  <text x="262" y="140" font-family="monospace" font-size="11" fill="#c4b5fd">BullMQ workers</text>
+  <circle cx="252" cy="154" r="3" fill="#a78bfa" opacity="0.7"/>
+  <text x="262" y="158" font-family="monospace" font-size="11" fill="#c4b5fd">JWT + refresh tokens</text>
+  <circle cx="252" cy="172" r="3" fill="#a78bfa" opacity="0.7"/>
+  <text x="262" y="176" font-family="monospace" font-size="11" fill="#c4b5fd">RBAC 4 roles</text>
+
+  <!-- Card 3: Database -->
+  <rect x="430" y="50" width="185" height="145" rx="12" fill="#050f1a" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.6"/>
+  <text x="522" y="76" font-family="monospace" font-size="10" fill="#38bdf8" text-anchor="middle" letter-spacing="2">DATABASE</text>
+  <line x1="445" y1="83" x2="600" y2="83" stroke="#38bdf8" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="452" cy="100" r="3" fill="#38bdf8" opacity="0.7"/>
+  <text x="462" y="104" font-family="monospace" font-size="11" fill="#7dd3fc">PostgreSQL 16</text>
+  <circle cx="452" cy="118" r="3" fill="#38bdf8" opacity="0.7"/>
+  <text x="462" y="122" font-family="monospace" font-size="11" fill="#7dd3fc">pgvector extension</text>
+  <circle cx="452" cy="136" r="3" fill="#38bdf8" opacity="0.7"/>
+  <text x="462" y="140" font-family="monospace" font-size="11" fill="#7dd3fc">1536-dim embeddings</text>
+  <circle cx="452" cy="154" r="3" fill="#38bdf8" opacity="0.7"/>
+  <text x="462" y="158" font-family="monospace" font-size="11" fill="#7dd3fc">Redis Pub/Sub</text>
+  <circle cx="452" cy="172" r="3" fill="#38bdf8" opacity="0.7"/>
+  <text x="462" y="176" font-family="monospace" font-size="11" fill="#7dd3fc">ivfflat index</text>
+
+  <!-- Card 4: AI -->
+  <rect x="630" y="50" width="185" height="145" rx="12" fill="#080e1a" stroke="#22c55e" stroke-width="1.5" stroke-opacity="0.6"/>
+  <text x="722" y="76" font-family="monospace" font-size="10" fill="#22c55e" text-anchor="middle" letter-spacing="2">AI / ML</text>
+  <line x1="645" y1="83" x2="800" y2="83" stroke="#22c55e" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="652" cy="100" r="3" fill="#22c55e" opacity="0.7"/>
+  <text x="662" y="104" font-family="monospace" font-size="11" fill="#4ade80">Claude Sonnet 4</text>
+  <circle cx="652" cy="118" r="3" fill="#22c55e" opacity="0.7"/>
+  <text x="662" y="122" font-family="monospace" font-size="11" fill="#4ade80">Gap analysis</text>
+  <circle cx="652" cy="136" r="3" fill="#22c55e" opacity="0.7"/>
+  <text x="662" y="140" font-family="monospace" font-size="11" fill="#4ade80">Career path gen</text>
+  <circle cx="652" cy="154" r="3" fill="#22c55e" opacity="0.7"/>
+  <text x="662" y="158" font-family="monospace" font-size="11" fill="#4ade80">OpenAI embeddings</text>
+  <circle cx="652" cy="172" r="3" fill="#22c55e" opacity="0.7"/>
+  <text x="662" y="176" font-family="monospace" font-size="11" fill="#4ade80">Digest blurb gen</text>
+
+  <!-- Card 5: Infra -->
+  <rect x="830" y="50" width="140" height="145" rx="12" fill="#0a0f10" stroke="#f59e0b" stroke-width="1.5" stroke-opacity="0.6"/>
+  <text x="900" y="76" font-family="monospace" font-size="10" fill="#f59e0b" text-anchor="middle" letter-spacing="2">INFRA</text>
+  <line x1="845" y1="83" x2="955" y2="83" stroke="#f59e0b" stroke-width="0.5" opacity="0.3"/>
+  <circle cx="852" cy="100" r="3" fill="#f59e0b" opacity="0.7"/>
+  <text x="862" y="104" font-family="monospace" font-size="10" fill="#fde68a">Docker Compose</text>
+  <circle cx="852" cy="118" r="3" fill="#f59e0b" opacity="0.7"/>
+  <text x="862" y="122" font-family="monospace" font-size="10" fill="#fde68a">Multi-stage builds</text>
+  <circle cx="852" cy="136" r="3" fill="#f59e0b" opacity="0.7"/>
+  <text x="862" y="140" font-family="monospace" font-size="10" fill="#fde68a">npm workspaces</text>
+  <circle cx="852" cy="154" r="3" fill="#f59e0b" opacity="0.7"/>
+  <text x="862" y="158" font-family="monospace" font-size="10" fill="#fde68a">Nodemailer SMTP</text>
+  <circle cx="852" cy="172" r="3" fill="#f59e0b" opacity="0.7"/>
+  <text x="862" y="176" font-family="monospace" font-size="10" fill="#fde68a">ES2022 target</text>
+
+  <!-- Animated pulse on AI card (highlight) -->
+  <rect x="630" y="50" width="185" height="145" rx="12" fill="none" stroke="#22c55e" stroke-width="2" opacity="0">
+    <animate attributeName="opacity" values="0;0.4;0" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-width" values="2;6;2" dur="3s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="216" width="1000" height="4" fill="none">
+    <animate attributeName="fill" values="#00d4ff;#7b2fff;#22c55e;#00d4ff" dur="6s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="0" y="216" width="1000" height="4">
+    <animate attributeName="fill" values="#00d4ff;#7b2fff;#22c55e;#00d4ff" dur="6s" repeatCount="indefinite"/>
+  </rect>
+</svg>
